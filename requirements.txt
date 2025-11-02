@@ -3,28 +3,43 @@ pandas
 plotly
 ```
 
----
-
-## 📋 Step-by-Step Instructions
-
-### **Step 1: Copy the List Above**
-Copy these three lines:
+### **If it looks different:**
+1. Click on `requirements.txt` in GitHub
+2. Click the **pencil icon** (Edit this file) on the right
+3. Delete everything
+4. Copy and paste exactly:
 ```
 streamlit
 pandas
 plotly
 ```
+5. Click **"Commit changes"**
 
-### **Step 2: Go to GitHub**
-1. Open your browser and go to: https://github.com
-2. Navigate to your `claims-demo-mvp1` repository
+---
 
-### **Step 3: Create the requirements.txt File**
-1. Click the **"Add file"** button (top right area)
-2. Select **"Create new file"**
-3. In the "Name your file..." box, type: `requirements.txt`
-4. In the large text editor below, paste the three library names:
+## **Step 2: Check the Streamlit Cloud Terminal for Specific Error**
+
+1. In Streamlit Cloud, click **"Manage app"** (bottom right)
+2. Look at the **terminal/logs** section
+3. Scroll down to see the error message
+
+### **Common errors you might see:**
+
+**Error A: "No module named 'plotly.express'"**
+- This is actually fine - plotly.express is included in plotly
+
+**Error B: "Could not find a version that satisfies the requirement"**
+- Try updating requirements.txt to specify versions
+
+**Error C: "FileNotFoundError: synthetic_claims_data.csv"**
+- Your CSV file is missing from GitHub
+
+---
+
+## **Step 3: Most Likely Fix - Update requirements.txt with Specific Versions**
+
+Replace your current `requirements.txt` with this version that includes specific, stable versions:
 ```
-   streamlit
-   pandas
-   plotly
+streamlit==1.28.0
+pandas==2.0.3
+plotly==5.17.0
