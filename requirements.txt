@@ -1,0 +1,30 @@
+streamlit
+pandas
+plotly
+```
+
+---
+
+## 📋 Step-by-Step Instructions
+
+### **Step 1: Copy the List Above**
+Copy these three lines:
+```
+streamlit
+pandas
+plotly
+```
+
+### **Step 2: Go to GitHub**
+1. Open your browser and go to: https://github.com
+2. Navigate to your `claims-demo-mvp1` repository
+
+### **Step 3: Create the requirements.txt File**
+1. Click the **"Add file"** button (top right area)
+2. Select **"Create new file"**
+3. In the "Name your file..." box, type: `requirements.txt`
+4. In the large text editor below, paste the three library names:
+```
+   streamlit
+   pandas
+   plotly
