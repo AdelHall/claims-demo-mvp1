@@ -3,43 +3,51 @@ pandas
 plotly
 ```
 
-### **If it looks different:**
-1. Click on `requirements.txt` in GitHub
-2. Click the **pencil icon** (Edit this file) on the right
-3. Delete everything
-4. Copy and paste exactly:
-```
-streamlit
-pandas
-plotly
-```
-5. Click **"Commit changes"**
+### **Step 3: Commit**
+1. Scroll down
+2. Click **"Commit changes"**
+3. Click **"Commit changes"** again in the popup
 
 ---
 
-## **Step 2: Check the Streamlit Cloud Terminal for Specific Error**
+## **Step 4: Force Streamlit to Rebuild**
 
-1. In Streamlit Cloud, click **"Manage app"** (bottom right)
-2. Look at the **terminal/logs** section
-3. Scroll down to see the error message
+### **Option A: Reboot the App**
+1. Go to your Streamlit Cloud dashboard
+2. Click **"Manage app"**
+3. Click the **three dots menu** (⋮) in the top right
+4. Click **"Reboot app"**
+5. Wait 2-3 minutes
 
-### **Common errors you might see:**
-
-**Error A: "No module named 'plotly.express'"**
-- This is actually fine - plotly.express is included in plotly
-
-**Error B: "Could not find a version that satisfies the requirement"**
-- Try updating requirements.txt to specify versions
-
-**Error C: "FileNotFoundError: synthetic_claims_data.csv"**
-- Your CSV file is missing from GitHub
+### **Option B: If Reboot Doesn't Work - Redeploy**
+1. In Streamlit Cloud, click the **three dots menu** (⋮)
+2. Click **"Delete app"**
+3. Go back to Streamlit Cloud home
+4. Click **"New app"**
+5. Select your repository: `claims-demo-mvp1`
+6. Main file path: `app.py`
+7. Click **"Deploy!"**
 
 ---
 
-## **Step 3: Most Likely Fix - Update requirements.txt with Specific Versions**
+## **Step 5: Verify the Fix**
 
-Replace your current `requirements.txt` with this version that includes specific, stable versions:
+After rebooting/redeploying, check the **terminal logs** in "Manage app". You should see:
 ```
-streamlit==1.28.0
-pandas==2.0.3
-plotly==5.17.0
+Collecting streamlit
+Collecting pandas
+Collecting plotly
+Successfully installed streamlit pandas plotly
+```
+
+If you see that, your app should work! 🎉
+
+---
+
+## **Alternative: Try This Enhanced requirements.txt**
+
+If the basic version still doesn't work, try with specific versions:
+```
+streamlit>=1.28.0
+pandas>=2.0.0
+plotly>=5.17.0
